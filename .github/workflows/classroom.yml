@@ -13,6 +13,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    - name: Debug files
+      run: |
+        pwd
+        ls
+        ls -R
+        find . -name "*.cpp"      
     - name: compile part-a
       id: compile-part-a
       uses: classroom-resources/autograding-command-grader@v1
