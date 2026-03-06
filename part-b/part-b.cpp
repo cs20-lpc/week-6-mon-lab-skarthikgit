@@ -33,3 +33,20 @@ int main() {
     // terminate
     return 0;
 }
+
+void towerHanoi(int n, string source, string spare, string target, int& numMoves) {
+    if (n <= 0) {
+        return;
+    }
+
+    if (n == 1) {
+        cout << source << " -> " << target << endl;
+        numMoves++;
+        return;
+    }
+
+    towerHanoi(n - 1, source, target, spare, numMoves);
+    cout << source << " -> " << target << endl;
+    numMoves++;
+    towerHanoi(n - 1, spare, source, target, numMoves);
+}
